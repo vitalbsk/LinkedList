@@ -1,12 +1,16 @@
 ﻿using System;
 
-namespace ConsoleApplication
+namespace DataStructure.LinkedList
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Linked list.");
+            LinkedList<int> list = new LinkedList<int>();
+            list.AddFirst(1);
+            list.AddLast(2);
+            Console.WriteLine(list);
         }
     }
 }
