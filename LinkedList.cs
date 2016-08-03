@@ -6,7 +6,7 @@ namespace DataStructure.LinkedList
     {
         public Node<T> _head;
         public Node<T> _current;
-        public int count;
+        public int _count;
 
         public LinkedList(){
             _head = null;
@@ -26,7 +26,7 @@ namespace DataStructure.LinkedList
                 newNode.Next = _head;                
                 _head = newNode;                                
             }      
-            count++;          
+            _count++;          
         }
         public void AddLast(T value)
         {
@@ -38,7 +38,7 @@ namespace DataStructure.LinkedList
                 _current.Next = newNode;                
                 _current = newNode;                                
             }      
-            count++;          
+            _count++;          
         }
 
          public void AddAfter(Node<T> node, T value)
@@ -51,7 +51,7 @@ namespace DataStructure.LinkedList
                 newNode.Next = node.Next;       
                 node.Next = newNode;                           
             }      
-            count++;          
+            _count++;          
         }
 
          public void AddBefore(Node<T> node, T value)
@@ -64,8 +64,49 @@ namespace DataStructure.LinkedList
                 newNode.Next = node.Next;       
                 node.Next = newNode;                           
             }      
-            count++;          
+            _count++;          
         }
+
+        public void DeleteFirst(){
+            if(_head != null)
+            {
+                _head = _head.Next;
+                _count--;
+            }
+        }
+        public void DeleteLast(){
+            if(_current != null)
+            {
+                if(_count == 1){
+                    _head = _current = null;
+                    _count = 0;
+                }
+                Node<T> curr = _head;
+               while(curr.Next.Next != null)
+               {
+                    curr = curr.Next;
+               }
+               curr.Next = null;
+               _count--;
+            }
+        }     
+
+        public void Delete(int index){
+            if(_current != null)
+            {
+                if(_count == 1){
+                    _head = _current = null;
+                    _count = 0;
+                }
+                Node<T> curr = _head;
+               while(curr.Next.Next != null)
+               {
+                    curr = curr.Next;
+               }
+               curr.Next = null;
+               _count--;
+            }
+        }        
 
         private void CreateInitialNode(T value){
               _head = new Node<T>{ Value = value };
