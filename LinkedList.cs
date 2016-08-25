@@ -106,6 +106,19 @@ namespace DataStructure.LinkedList
                curr.Next = null;
                _count--;
             }
+        }    
+
+        public Node<T> Search(T value){                        
+            Node<T> curr = _head;
+            while(curr != null)
+             {
+                 if(curr.Value.Equals(value))
+                     return curr;
+                    
+                 curr = curr.Next;
+             }
+               
+             return null;
         }        
 
         private void CreateInitialNode(T value){
