@@ -1,0 +1,10 @@
+Methods:
+
+void AddFirst(T value); O(1)
+void AddLast(T value); O(1)
+AddAfter(Node<T> node, T value); O(1)
+void AddBefore(Node<T> node, T value); O(1)
+void DeleteFirst(); O(1)
+void DeleteLast(); O(n)
+void Delete(int index); O(n)
+Node<T> Search(T value); O(n)
